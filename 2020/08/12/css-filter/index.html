@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="filter (滤镜) 此属性将模糊，颜色偏移等图形效果用于元素，通常用来调整图像、背景和边框的渲染。  brightness 亮度：默认为1，0%全黑，100%不变，超过100%则数值越大亮度越高。  123.brightness&amp;#123;  filter: brightness(150%);&amp;#125;    staurate 饱和度：0%则饱和度最低，100%为不变，超过100%则数值越大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css-filter">
+<meta property="og:url" content="https://wrectou.github.io/2020/08/12/css-filter/index.html">
+<meta property="og:site_name" content="NexT">
+<meta property="og:description" content="filter (滤镜) 此属性将模糊，颜色偏移等图形效果用于元素，通常用来调整图像、背景和边框的渲染。  brightness 亮度：默认为1，0%全黑，100%不变，超过100%则数值越大亮度越高。  123.brightness&amp;#123;  filter: brightness(150%);&amp;#125;    staurate 饱和度：0%则饱和度最低，100%为不变，超过100%则数值越大">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-12T02:38:33.000Z">
+<meta property="article:modified_time" content="2020-08-12T06:35:05.291Z">
+<meta property="article:author" content="Wrectou">
+<meta property="article:tag" content="css3">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>css-filter</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/Wrectou" target="_blank" rel="noopener">项目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/07/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrectou.github.io/2020/08/12/css-filter/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrectou.github.io/2020/08/12/css-filter/&text=css-filter" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrectou.github.io/2020/08/12/css-filter/&is_video=false&description=css-filter" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=css-filter&body=Check out this article: https://wrectou.github.io/2020/08/12/css-filter/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrectou.github.io/2020/08/12/css-filter/&name=css-filter&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://wrectou.github.io/2020/08/12/css-filter/&t=css-filter" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#filter-滤镜"><span class="toc-number">1.</span> <span class="toc-text">filter (滤镜)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#brightness"><span class="toc-number">1.1.</span> <span class="toc-text">brightness</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#staurate"><span class="toc-number">1.2.</span> <span class="toc-text">staurate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#contrast"><span class="toc-number">1.3.</span> <span class="toc-text">contrast</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#graysale"><span class="toc-number">1.4.</span> <span class="toc-text">graysale</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#opacity"><span class="toc-number">1.5.</span> <span class="toc-text">opacity</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#blur"><span class="toc-number">1.6.</span> <span class="toc-text">blur</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#invert"><span class="toc-number">1.7.</span> <span class="toc-text">invert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hue-rotate"><span class="toc-number">1.8.</span> <span class="toc-text">hue-rotate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sepia"><span class="toc-number">1.9.</span> <span class="toc-text">sepia</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#drop-shadow"><span class="toc-number">1.10.</span> <span class="toc-text">drop-shadow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#url"><span class="toc-number">1.11.</span> <span class="toc-text">url</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        css-filter
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">NexT</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-08-12T02:38:33.000Z" itemprop="datePublished">2020-08-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/css3/" rel="tag">css3</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h4 id="filter-滤镜"><a href="#filter-滤镜" class="headerlink" title="filter (滤镜)"></a>filter (滤镜)</h4><blockquote>
+<p>此属性将模糊，颜色偏移等图形效果用于元素，通常用来调整图像、背景和边框的渲染。</p>
+</blockquote>
+<h5 id="brightness"><a href="#brightness" class="headerlink" title="brightness"></a>brightness</h5><blockquote>
+<p>亮度：默认为1，0%全黑，100%不变，超过100%则数值越大亮度越高。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.brightness</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">brightness</span>(<span class="number">150%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="staurate"><a href="#staurate" class="headerlink" title="staurate"></a>staurate</h5><blockquote>
+<p>饱和度：0%则饱和度最低，100%为不变，超过100%则数值越大饱和度越高。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.staurate</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">staurate</span>(<span class="number">120%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="contrast"><a href="#contrast" class="headerlink" title="contrast"></a>contrast</h5><blockquote>
+<p>对比度：0%则饱和度最低画面为全灰，100%为不变，超过100%则意味着运用更低的对比度。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.contrast</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">contrast</span>(<span class="number">150%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="graysale"><a href="#graysale" class="headerlink" title="graysale"></a>graysale</h5><blockquote>
+<p>灰度：值在0%～100%之间，0%无变化，100%则全灰。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.graysale</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">graysale</span>(<span class="number">20%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a>opacity</h5><blockquote>
+<p>透明度：0%则完全透明，100%则没有变化。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.opacity</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">opacity</span>(<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="blur"><a href="#blur" class="headerlink" title="blur"></a>blur</h5><blockquote>
+<p>高斯模糊：默认为0，可以设置css长度值，但是不支持百分比。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blur</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(<span class="number">4px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="invert"><a href="#invert" class="headerlink" title="invert"></a>invert</h5><blockquote>
+<p>反色：0%无变化，100%则完全反转。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.invert</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">invert</span>(<span class="number">30%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="hue-rotate"><a href="#hue-rotate" class="headerlink" title="hue-rotate"></a>hue-rotate</h5><blockquote>
+<p>色相反转：默认0deg，没有最大值，但是360deg相当于绕了一圈回到原点。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hue-rotate</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">hue-rotate</span>(<span class="number">90deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="sepia"><a href="#sepia" class="headerlink" title="sepia"></a>sepia</h5><blockquote>
+<p>褐色：0%无变化，100%则完全深褐色。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sepia</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">sepia</span>(<span class="number">20%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="drop-shadow"><a href="#drop-shadow" class="headerlink" title="drop-shadow"></a>drop-shadow</h5><blockquote>
+<p>阴影效果：x轴 y轴 模糊范围 颜色。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.drop-shadow</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">drop-shadow</span>(<span class="number">2px</span> <span class="number">4px</span> <span class="number">10px</span> #ff6600);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="url"><a href="#url" class="headerlink" title="url"></a>url</h5><blockquote>
+<p>URL函数接受一个XML文件，该文件设置了 一个SVG滤镜，且可以包含一个锚点来指定一个具体的滤镜元素.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.url</span>&#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">url</span>(resources.svg#c1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/Wrectou" target="_blank" rel="noopener">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#filter-滤镜"><span class="toc-number">1.</span> <span class="toc-text">filter (滤镜)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#brightness"><span class="toc-number">1.1.</span> <span class="toc-text">brightness</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#staurate"><span class="toc-number">1.2.</span> <span class="toc-text">staurate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#contrast"><span class="toc-number">1.3.</span> <span class="toc-text">contrast</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#graysale"><span class="toc-number">1.4.</span> <span class="toc-text">graysale</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#opacity"><span class="toc-number">1.5.</span> <span class="toc-text">opacity</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#blur"><span class="toc-number">1.6.</span> <span class="toc-text">blur</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#invert"><span class="toc-number">1.7.</span> <span class="toc-text">invert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hue-rotate"><span class="toc-number">1.8.</span> <span class="toc-text">hue-rotate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sepia"><span class="toc-number">1.9.</span> <span class="toc-text">sepia</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#drop-shadow"><span class="toc-number">1.10.</span> <span class="toc-text">drop-shadow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#url"><span class="toc-number">1.11.</span> <span class="toc-text">url</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://wrectou.github.io/2020/08/12/css-filter/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://wrectou.github.io/2020/08/12/css-filter/&text=css-filter" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wrectou.github.io/2020/08/12/css-filter/&is_video=false&description=css-filter" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=css-filter&body=Check out this article: https://wrectou.github.io/2020/08/12/css-filter/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://wrectou.github.io/2020/08/12/css-filter/&title=css-filter" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://wrectou.github.io/2020/08/12/css-filter/&name=css-filter&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://wrectou.github.io/2020/08/12/css-filter/&t=css-filter" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2020
+    Wrectou
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="https://github.com/Wrectou" target="_blank" rel="noopener">项目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
